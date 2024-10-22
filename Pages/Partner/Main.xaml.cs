@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Master_Pol.Classes.Context;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,9 +20,20 @@ namespace Master_Pol.Pages.Partner
     /// </summary>
     public partial class Main : Page
     {
+        Contexts Contexts = new Contexts();
         public Main()
         {
             InitializeComponent();
+            loadItem();
+        }
+
+        private void loadItem()
+        {
+            parent.Children.Clear();
+            foreach(var item in Contexts.Partners)
+            {
+                parent.Children.Add(new Item(item));
+            }
         }
     }
 }

@@ -22,7 +22,6 @@ namespace Master_Pol
     public partial class MainWindow : Window
     {
         public static MainWindow mainWindow;
-        public Contexts Contexts = new Contexts();
 
         public MainWindow()
         {
